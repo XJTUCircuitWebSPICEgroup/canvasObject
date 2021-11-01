@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="module">
+            import { testExample } from "./canvasObjectExample.js";
+            import { CanvasObjectPainter } from "./canvasObjectPainter.js";
+            import { CanvasObjectListener } from "./canvasObjectListener.js";
+            testExample();
+            CanvasObjectPainter.w = 10;
+            let ctx = cv.getContext("2d");
+            ctx.fillStype = "#0FFFF0F0";
+            cv.onclick = function(e){
+                CanvasObjectListener.click(e.x/CanvasObjectPainter.w,e.y/CanvasObjectPainter.w,"You clicked me!!");
+                //ctx.fillRect(0,0,300,300);
+                CanvasObjectPainter.paint(ctx);
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="cv" width="1024" height="768"></canvas>
+    </body>
+</html>
